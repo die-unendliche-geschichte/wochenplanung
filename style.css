@@ -87,8 +87,8 @@ body {
 /* ── Shared cell ────────────────────────────────────────────── */
 .cell {
   border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ddd;
-  padding: 0.5mm 1mm;
+  /* border-right: 1px solid #ddd; */
+  padding: 0.5mm 0.5mm;
   /* labels via ::before sit at the top */
   display: flex;
   align-items: flex-start;
@@ -96,8 +96,9 @@ body {
 
 .cell::before {
   font-size: 8pt;
-  line-height: 1;
-  letter-spacing: 0.03em;
+  line-height: 1.05;
+  width: 100%;
+  /* letter-spacing: 0.03em; */
   color: white;
   padding: 2px;
   border-radius: 2px;
@@ -118,16 +119,18 @@ body {
 
 /* ── Labels ──────────────────────────────────────────────────── */
 /* Add a class here, apply it in HTML — no text needed in the markup */
-.villa-fahrt-1::before { content: "Villa Fahrt (bringen)"; }
-.villa-fahrt-2::before { content: "Villa Fahrt (holen)"; }
-.fruehstueck::before { content: "Frühstück"; }
-.mittagessen::before { content: "Mittagessen"; }
-.kinder-empfangen::before { content: "Kinder empfangen"; }
-.abendessen::before { content: "Abendessen"; }
-.home-office::before{content: "Homeoffice";}
-.bela::before{content: "Béla";}
-.einschlafen::before{content: "Zzz...";}
+.villa-fahrt-1::before { content: "Villa Fahrt (bringen) 🚗"; }
+.villa-fahrt-2::before { content: "Villa Fahrt (holen) 🚗"; }
+.fruehstueck::before { content: "Frühstück 🥐"; }
+.mittagessen::before { content: "Mittagessen 🍕"; }
+.kinder-empfangen::before { content: "Kinder empfangen 🤗"; }
+.abendessen::before { content: "Abendessen 🍞"; }
+.home-office::before{content: "Homeoffice 💻";}
+.bela::before{content: "Béla 👦🏽";}
+.einschlafen::before{content: "Zzz...🛌🏽";}
+.picknick::before{content: "Picknick vorbereiten 🥪";}
 
+.picknick,
 .villa-fahrt-1, 
 .villa-fahrt-2, 
 .fruehstueck, 
@@ -143,7 +146,9 @@ body {
 }
 
 .na{
-  background-color: lightgray;
+	background-image: repeating-linear-gradient(-45deg, var(--color-primary) 0, var(--color-primary) 1px, transparent 0, transparent 50%);
+	background-size: 10px 10px;
+	
 }
 
 .cell-day-header {
