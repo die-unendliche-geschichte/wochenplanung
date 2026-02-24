@@ -1,3 +1,9 @@
+/* ── Colours ─────────────────────────────────────────────────── */
+:root {
+  --color-primary:   darkolivegreen;
+  --color-secondary: lightblue;
+}
+
 /* ── Page setup ─────────────────────────────────────────────── */
 @page {
   size: A4 landscape;
@@ -13,7 +19,7 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9pt;
-  color: #222;
+  color: var(--color-secondary);
   background: #fff;
 }
 
@@ -96,7 +102,7 @@ body {
   padding: 2px;
   border-radius: 2px;
   white-space: nowrap;
-  background-color: black;
+  background-color: var(--color-primary);
 }
 
 /* Right sub-column of each day: stronger border marks the day boundary */
@@ -138,7 +144,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #222;
+  background: var(--color-primary);
   color: #fff;
   border-bottom: 1.5px solid #444;
   border-right: 1.5px solid #444;
