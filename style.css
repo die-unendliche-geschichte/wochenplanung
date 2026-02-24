@@ -125,6 +125,8 @@ body {
 .kinder-empfangen::before { content: "Kinder empfangen"; }
 .abendessen::before { content: "Abendessen"; }
 .home-office::before{content: "Homeoffice";}
+.bela::before{content: "Béla";}
+.einschlafen::before{content: "Zzz...";}
 
 .villa-fahrt-1, 
 .villa-fahrt-2, 
@@ -132,9 +134,16 @@ body {
 .mittagessen, 
 .kinder-empfangen,
 .abendessen,
-.home-office
+.home-office,
+.bela,
+.na,
+.einschlafen
 {
   border: 1px solid black;
+}
+
+.na{
+  background-color: lightgray;
 }
 
 .cell-day-header {
