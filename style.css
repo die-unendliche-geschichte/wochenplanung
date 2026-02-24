@@ -108,6 +108,7 @@ body {
 
 /* Right sub-column of each day: stronger border marks the day boundary */
 .cell.erwerbsarbeit {
+  grid-row: 2 / 16;
   border-right: 1.5px solid #999;
 }
 
@@ -145,10 +146,14 @@ body {
   border: 1px solid black;
 }
 
-.na{
-	background-image: repeating-linear-gradient(-45deg, var(--color-primary) 0, var(--color-primary) 1px, transparent 0, transparent 50%);
-	background-size: 10px 10px;
-	
+.na {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-primary)  0,
+    var(--color-primary)  1.5px,
+    transparent           1.5px,
+    transparent           8px
+  );
 }
 
 .cell-day-header {
@@ -186,8 +191,9 @@ body {
   }
 
   .page {
-    width: 100%;
-    min-height: 100%;
+    width: 289mm;   /* 297 − 2×4mm */
+    height: 202mm;  /* 210 − 2×4mm */
+    overflow: hidden;
   }
 }
 
