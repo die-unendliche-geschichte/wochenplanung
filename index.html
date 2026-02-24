@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wochenplanung</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="planner-grid">
+
+      <!-- Corner + day headers (row 1) -->
+      <div class="cell cell-time cell-corner"></div>
+      <div class="cell cell-day-header"><span class="day-name">Montag</span><span class="day-date">__.__</span></div>
+      <div class="cell cell-day-header"><span class="day-name">Dienstag</span><span class="day-date">__.__</span></div>
+      <div class="cell cell-day-header"><span class="day-name">Mittwoch</span><span class="day-date">__.__</span></div>
+      <div class="cell cell-day-header"><span class="day-name">Donnerstag</span><span class="day-date">__.__</span></div>
+      <div class="cell cell-day-header"><span class="day-name">Freitag</span><span class="day-date">__.__</span></div>
+
+      <!-- Time column (col 1, auto-placed rows 2–15) -->
+      <div class="cell cell-time r7">7</div>
+      <div class="cell cell-time r8">8</div>
+      <div class="cell cell-time r9">9</div>
+      <div class="cell cell-time r10">10</div>
+      <div class="cell cell-time r11">11</div>
+      <div class="cell cell-time r12">12</div>
+      <div class="cell cell-time r13">13</div>
+      <div class="cell cell-time r14">14</div>
+      <div class="cell cell-time r15">15</div>
+      <div class="cell cell-time r16">16</div>
+      <div class="cell cell-time r17">17</div>
+      <div class="cell cell-time r18">18</div>
+      <div class="cell cell-time r19">19</div>
+      <div class="cell cell-time r20">20</div>
+
+      <!-- ── Montag haushalt (col 2) ── -->
+      <div class="cell mo r7 fruehstueck"></div>
+      <div class="cell mo r8"></div>
+      <div class="cell mo r9"></div>
+      <div class="cell mo r10"></div>
+      <div class="cell mo r11"></div>
+      <div class="cell mo r12 mittagessen span-2"></div>
+      <!-- <div class="cell mo r13"></div> -->
+      <div class="cell mo r14"></div>
+      <div class="cell mo r15"></div>
+      <div class="cell mo r16"></div>
+      <div class="cell mo r17 kinder-empfangen"></div>
+      <div class="cell mo r18 abendessen span-2"></div>
+      <!-- <div class="cell mo r19"></div> -->
+      <div class="cell mo r20"></div>
+
+      <!-- ── Montag erwerbsarbeit (col 3) ── -->
+      <div class="cell mo erwerbsarbeit r7"></div>
+      <div class="cell mo erwerbsarbeit r8"></div>
+      <div class="cell mo erwerbsarbeit r9"></div>
+      <div class="cell mo erwerbsarbeit r10"></div>
+      <div class="cell mo erwerbsarbeit r11"></div>
+      <div class="cell mo erwerbsarbeit r12"></div>
+      <div class="cell mo erwerbsarbeit r13"></div>
+      <div class="cell mo erwerbsarbeit r14"></div>
+      <div class="cell mo erwerbsarbeit r15"></div>
+      <div class="cell mo erwerbsarbeit r16"></div>
+      <div class="cell mo erwerbsarbeit r17"></div>
+      <div class="cell mo erwerbsarbeit r18"></div>
+      <div class="cell mo erwerbsarbeit r19"></div>
+      <div class="cell mo erwerbsarbeit r20"></div>
+
+      <!-- ── Dienstag haushalt (col 4) ── -->
+      <div class="cell di r7 fruehstueck"></div>
+      <div class="cell di r8 villa-fahrt-1 span-2"></div>
+      <!-- <div class="cell di r9"></div> -->
+      <div class="cell di r10"></div>
+      <div class="cell di r11 villa-fahrt-2"></div>
+      <div class="cell di r12 mittagessen"></div>
+      <div class="cell di r13 home-office span-4"></div>
+      <!-- <div class="cell di r14"></div> -->
+      <!-- <div class="cell di r15"></div> -->
+      <!-- <div class="cell di r16"></div> -->
+      <div class="cell di r17 kinder-empfangen"></div>
+      <div class="cell di r18 abendessen span-2"></div>
+      <!-- <div class="cell di r19"></div> -->
+      <div class="cell di r20"></div>
+
+      <!-- ── Dienstag erwerbsarbeit (col 5) ── -->
+      <div class="cell di erwerbsarbeit r7"></div>
+      <div class="cell di erwerbsarbeit r8"></div>
+      <div class="cell di erwerbsarbeit r9"></div>
+      <div class="cell di erwerbsarbeit r10"></div>
+      <div class="cell di erwerbsarbeit r11"></div>
+      <div class="cell di erwerbsarbeit r12"></div>
+      <div class="cell di erwerbsarbeit r13"></div>
+      <div class="cell di erwerbsarbeit r14"></div>
+      <div class="cell di erwerbsarbeit r15"></div>
+      <div class="cell di erwerbsarbeit r16"></div>
+      <div class="cell di erwerbsarbeit r17"></div>
+      <div class="cell di erwerbsarbeit r18"></div>
+      <div class="cell di erwerbsarbeit r19"></div>
+      <div class="cell di erwerbsarbeit r20"></div>
+
+      <!-- ── Mittwoch haushalt (col 6) ── -->
+      <div class="cell mi r7 fruehstueck"></div>
+      <div class="cell mi r8"></div>
+      <div class="cell mi r9"></div>
+      <div class="cell mi r10"></div>
+      <div class="cell mi r11"></div>
+      <div class="cell mi r12 mittagessen span-2"></div>
+      <!-- <div class="cell mi r13"></div> -->
+      <div class="cell mi r14"></div>
+      <div class="cell mi r15"></div>
+      <div class="cell mi r16"></div>
+      <div class="cell mi r17"></div>
+      <div class="cell mi r18 abendessen span-2"></div>
+      <!-- <div class="cell mi r19"></div> -->
+      <div class="cell mi r20"></div>
+
+      <!-- ── Mittwoch erwerbsarbeit (col 7) ── -->
+      <div class="cell mi erwerbsarbeit r7"></div>
+      <div class="cell mi erwerbsarbeit r8"></div>
+      <div class="cell mi erwerbsarbeit r9"></div>
+      <div class="cell mi erwerbsarbeit r10"></div>
+      <div class="cell mi erwerbsarbeit r11"></div>
+      <div class="cell mi erwerbsarbeit r12"></div>
+      <div class="cell mi erwerbsarbeit r13"></div>
+      <div class="cell mi erwerbsarbeit r14"></div>
+      <div class="cell mi erwerbsarbeit r15"></div>
+      <div class="cell mi erwerbsarbeit r16"></div>
+      <div class="cell mi erwerbsarbeit r17"></div>
+      <div class="cell mi erwerbsarbeit r18"></div>
+      <div class="cell mi erwerbsarbeit r19"></div>
+      <div class="cell mi erwerbsarbeit r20"></div>
+
+      <!-- ── Donnerstag haushalt (col 8) ── -->
+      <div class="cell do r7 fruehstueck"></div>
+      <div class="cell do r8 villa-fahrt-1 span-2"></div>
+      <!-- r9 covered by span-2 -->
+      <div class="cell do r10"></div>
+      <div class="cell do r11 villa-fahrt-2"></div>
+      <div class="cell do r12 mittagessen"></div>
+      <div class="cell do r13 home-office span-4"></div>
+      <!-- <div class="cell do r14"></div> -->
+      <!-- <div class="cell do r15"></div> -->
+      <!-- <div class="cell do r16"></div> -->
+      <div class="cell do r17 kinder-empfangen"></div>
+      <div class="cell do r18 abendessen span-2"></div>
+      <!-- <div class="cell do r19"></div> -->
+      <div class="cell do r20"></div>
+
+      <!-- ── Donnerstag erwerbsarbeit (col 9) ── -->
+      <div class="cell do erwerbsarbeit r7"></div>
+      <div class="cell do erwerbsarbeit r8"></div>
+      <div class="cell do erwerbsarbeit r9"></div>
+      <div class="cell do erwerbsarbeit r10"></div>
+      <div class="cell do erwerbsarbeit r11"></div>
+      <div class="cell do erwerbsarbeit r12"></div>
+      <div class="cell do erwerbsarbeit r13"></div>
+      <div class="cell do erwerbsarbeit r14"></div>
+      <div class="cell do erwerbsarbeit r15"></div>
+      <div class="cell do erwerbsarbeit r16"></div>
+      <div class="cell do erwerbsarbeit r17"></div>
+      <div class="cell do erwerbsarbeit r18"></div>
+      <div class="cell do erwerbsarbeit r19"></div>
+      <div class="cell do erwerbsarbeit r20"></div>
+
+      <!-- ── Freitag haushalt (col 10) ── -->
+      <div class="cell fr r7 fruehstueck"></div>
+      <div class="cell fr r8"></div>
+      <div class="cell fr r9"></div>
+      <div class="cell fr r10"></div>
+      <div class="cell fr r11"></div>
+      <div class="cell fr r12 mittagessen span-2"></div>
+      <!-- <div class="cell fr r13"></div> -->
+      <div class="cell fr r14"></div>
+      <div class="cell fr r15"></div>
+      <div class="cell fr r16"></div>
+      <div class="cell fr r17"></div>
+      <div class="cell fr r18 abendessen span-2"></div>
+      <!-- <div class="cell fr r19"></div> -->
+      <div class="cell fr r20"></div>
+
+      <!-- ── Freitag erwerbsarbeit (col 11) ── -->
+      <div class="cell fr erwerbsarbeit r7"></div>
+      <div class="cell fr erwerbsarbeit r8"></div>
+      <div class="cell fr erwerbsarbeit r9"></div>
+      <div class="cell fr erwerbsarbeit r10"></div>
+      <div class="cell fr erwerbsarbeit r11"></div>
+      <div class="cell fr erwerbsarbeit r12"></div>
+      <div class="cell fr erwerbsarbeit r13"></div>
+      <div class="cell fr erwerbsarbeit r14"></div>
+      <div class="cell fr erwerbsarbeit r15"></div>
+      <div class="cell fr erwerbsarbeit r16"></div>
+      <div class="cell fr erwerbsarbeit r17"></div>
+      <div class="cell fr erwerbsarbeit r18"></div>
+      <div class="cell fr erwerbsarbeit r19"></div>
+      <div class="cell fr erwerbsarbeit r20"></div>
+
+    </div>
+  </div>
+</body>
+</html>

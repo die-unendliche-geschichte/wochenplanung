@@ -1,0 +1,186 @@
+/* ── Page setup ─────────────────────────────────────────────── */
+@page {
+  size: A4 landscape;
+  margin: 4mm;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9pt;
+  color: #222;
+  background: #fff;
+}
+
+/* ── Page container ─────────────────────────────────────────── */
+.page {
+  width: 289mm;   /* A4 landscape inner width (297 – 2×4mm) */
+  min-height: 202mm; /* A4 landscape inner height (210 – 2×4mm) */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Grid ───────────────────────────────────────────────────── */
+.planner-grid {
+  flex: 1;
+  display: grid;
+  /* 5 days × 2 sub-columns each */
+  grid-template-columns: 6mm repeat(5, 3fr 1fr);
+  /* header row + 10 content rows */
+  grid-template-rows: 8mm repeat(14, 1fr);
+  border-top: 1.5px solid #222;
+  border-left: 1.5px solid #222;
+}
+
+/* ── Column pins ─────────────────────────────────────────────── */
+.cell-time        { grid-column: 1; }
+.mo               { grid-column: 2; }
+.mo.erwerbsarbeit { grid-column: 3; }
+.di               { grid-column: 4; }
+.di.erwerbsarbeit { grid-column: 5; }
+.mi               { grid-column: 6; }
+.mi.erwerbsarbeit { grid-column: 7; }
+.do               { grid-column: 8; }
+.do.erwerbsarbeit { grid-column: 9; }
+.fr               { grid-column: 10; }
+.fr.erwerbsarbeit { grid-column: 11; }
+
+/* ── Row pins (hour → grid row) ─────────────────────────────── */
+.r7  { grid-row: 2; }
+.r8  { grid-row: 3; }
+.r9  { grid-row: 4; }
+.r10 { grid-row: 5; }
+.r11 { grid-row: 6; }
+.r12 { grid-row: 7; }
+.r13 { grid-row: 8; }
+.r14 { grid-row: 9; }
+.r15 { grid-row: 10; }
+.r16 { grid-row: 11; }
+.r17 { grid-row: 12; }
+.r18 { grid-row: 13; }
+.r19 { grid-row: 14; }
+.r20 { grid-row: 15; }
+
+/* ── Time column style ───────────────────────────────────────── */
+.cell-time {
+  font-size: 6pt;
+  color: #aaa;
+  justify-content: flex-end;
+  border-right: 1px solid #bbb;
+  padding: 0.5mm 1mm 0 0;
+}
+.cell-corner { grid-row: 1; }
+
+/* ── Day headers ─────────────────────────────────────────────── */
+
+/* ── Shared cell ────────────────────────────────────────────── */
+.cell {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ddd;
+  padding: 0.5mm 1mm;
+  /* labels via ::before sit at the top */
+  display: flex;
+  align-items: flex-start;
+}
+
+.cell::before {
+  font-size: 8pt;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: white;
+  padding: 2px;
+  border-radius: 2px;
+  white-space: nowrap;
+  background-color: black;
+}
+
+/* Right sub-column of each day: stronger border marks the day boundary */
+.cell.erwerbsarbeit {
+  border-right: 1.5px solid #999;
+}
+
+/* ── Row-spanning ────────────────────────────────────────────── */
+/* grid-row-end preserves the row-start set by the r* class */
+.span-2 { grid-row-end: span 2; }
+.span-3 { grid-row-end: span 3; }
+.span-4 { grid-row-end: span 4; }
+
+/* ── Labels ──────────────────────────────────────────────────── */
+/* Add a class here, apply it in HTML — no text needed in the markup */
+.villa-fahrt-1::before { content: "Villa Fahrt (bringen)"; }
+.villa-fahrt-2::before { content: "Villa Fahrt (holen)"; }
+.fruehstueck::before { content: "Frühstück"; }
+.mittagessen::before { content: "Mittagessen"; }
+.kinder-empfangen::before { content: "Kinder empfangen"; }
+.abendessen::before { content: "Abendessen"; }
+.home-office::before{content: "Homeoffice";}
+
+.villa-fahrt-1, 
+.villa-fahrt-2, 
+.fruehstueck, 
+.mittagessen, 
+.kinder-empfangen,
+.abendessen,
+.home-office
+{
+  border: 1px solid black;
+}
+
+.cell-day-header {
+  grid-row: 1;
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  color: #fff;
+  border-bottom: 1.5px solid #444;
+  border-right: 1.5px solid #444;
+  gap: 0.5mm;
+}
+
+.day-name {
+  font-weight: 700;
+  font-size: 8pt;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.day-date {
+  font-size: 7pt;
+  opacity: 0.75;
+  letter-spacing: 0.02em;
+}
+
+
+/* ── Print-specific overrides ───────────────────────────────── */
+@media print {
+  body {
+    background: none;
+  }
+
+  .page {
+    width: 100%;
+    min-height: 100%;
+  }
+}
+
+/* ── Screen preview ─────────────────────────────────────────── */
+@media screen {
+  body {
+    background: #e8e8e8;
+    padding: 20px;
+  }
+
+  .page {
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    padding: 4mm;
+  }
+}
