@@ -37,8 +37,8 @@ body {
   display: grid;
   /* 5 days × 2 sub-columns each */
   grid-template-columns: 6mm repeat(5, 3fr 1fr);
-  /* header row + 10 content rows */
-  grid-template-rows: 8mm repeat(14, 1fr);
+  /* header row + 15 content rows (hours 6–20) */
+  grid-template-rows: 8mm repeat(15, 1fr);
   border-top: 1.5px solid #222;
   border-left: 1.5px solid #222;
 }
@@ -57,20 +57,21 @@ body {
 .fr.erwerbsarbeit { grid-column: 11; }
 
 /* ── Row pins (hour → grid row) ─────────────────────────────── */
-.r7  { grid-row: 2; }
-.r8  { grid-row: 3; }
-.r9  { grid-row: 4; }
-.r10 { grid-row: 5; }
-.r11 { grid-row: 6; }
-.r12 { grid-row: 7; }
-.r13 { grid-row: 8; }
-.r14 { grid-row: 9; }
-.r15 { grid-row: 10; }
-.r16 { grid-row: 11; }
-.r17 { grid-row: 12; }
-.r18 { grid-row: 13; }
-.r19 { grid-row: 14; }
-.r20 { grid-row: 15; }
+.r6  { grid-row: 2; }
+.r7  { grid-row: 3; }
+.r8  { grid-row: 4; }
+.r9  { grid-row: 5; }
+.r10 { grid-row: 6; }
+.r11 { grid-row: 7; }
+.r12 { grid-row: 8; }
+.r13 { grid-row: 9; }
+.r14 { grid-row: 10; }
+.r15 { grid-row: 11; }
+.r16 { grid-row: 12; }
+.r17 { grid-row: 13; }
+.r18 { grid-row: 14; }
+.r19 { grid-row: 15; }
+.r20 { grid-row: 16; }
 
 /* ── Time column style ───────────────────────────────────────── */
 .cell-time {
@@ -108,7 +109,7 @@ body {
 
 /* Right sub-column of each day: stronger border marks the day boundary */
 .cell.erwerbsarbeit {
-  grid-row: 2 / 16;
+  grid-row: 2 / 17;
   border-right: 1.5px solid #999;
 }
 
@@ -122,15 +123,18 @@ body {
 /* Add a class here, apply it in HTML — no text needed in the markup */
 .villa-fahrt-1::before { content: "Villa Fahrt (bringen) 🚗"; }
 .villa-fahrt-2::before { content: "Villa Fahrt (holen) 🚗"; }
-.fruehstueck::before { content: "Frühstück 🥐"; }
-.mittagessen::before { content: "Mittagessen 🍕"; }
+.fruehstueck::before { content: "z'Morge 🥐"; }
+.mittagessen::before { content: "z'Mittag 🍕"; }
 .kinder-empfangen::before { content: "Kinder empfangen 🤗"; }
-.abendessen::before { content: "Abendessen 🍞"; }
+.abendessen::before { content: "z'Nacht 🍞"; }
+.home-office-fennek::before{content: "Homeoffice & Fennek 💻 🦮";}
 .home-office::before{content: "Homeoffice 💻";}
-.bela::before{content: "Béla 👦🏽";}
+.bela::before{content: "Béla & Fennek 👦🏽 🦮";}
 .einschlafen::before{content: "Zzz...🛌🏽";}
 .picknick::before{content: "Picknick vorbereiten 🥪";}
+.fennek::before{content: "Fennek 🦮";}
 
+.fennek,
 .picknick,
 .villa-fahrt-1, 
 .villa-fahrt-2, 
@@ -139,21 +143,17 @@ body {
 .kinder-empfangen,
 .abendessen,
 .home-office,
+.home-office-fennek,
 .bela,
-.na,
 .einschlafen
 {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
-.na {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    var(--color-primary)  0,
-    var(--color-primary)  1.5px,
-    transparent           1.5px,
-    transparent           8px
-  );
+
+
+.erwerbsarbeit{
+  background-color: lightgray;
 }
 
 .cell-day-header {

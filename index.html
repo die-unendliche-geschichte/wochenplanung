@@ -18,7 +18,8 @@
       <div class="cell cell-day-header"><span class="day-name">Donnerstag</span><span class="day-date">__.__</span></div>
       <div class="cell cell-day-header"><span class="day-name">Freitag</span><span class="day-date">__.__</span></div>
 
-      <!-- Time column (col 1, auto-placed rows 2–15) -->
+      <!-- Time column (col 1, rows 2–16) -->
+      <div class="cell cell-time r6">6</div>
       <div class="cell cell-time r7">7</div>
       <div class="cell cell-time r8">8</div>
       <div class="cell cell-time r9">9</div>
@@ -35,6 +36,7 @@
       <div class="cell cell-time r20">20</div>
 
       <!-- ── Montag haushalt (col 2) ── -->
+      <div class="cell mo r6 fennek"></div>
       <div class="cell mo r7 fruehstueck"></div>
       <div class="cell mo r8 bela span-4"></div>
       <!-- <div class="cell mo r9"></div> -->
@@ -42,25 +44,26 @@
       <!-- <div class="cell mo r11"></div> -->
       <div class="cell mo r12 mittagessen span-2"></div>
       <!-- <div class="cell mo r13"></div> -->
-      <div class="cell mo r14 bela span-2"></div>
+      <div class="cell mo r14 bela span-3"></div>
       <!-- <div class="cell mo r15"></div> -->
-      <div class="cell mo r16 picknick"></div>
+      <!-- <div class="cell mo r16"></div> -->
       <div class="cell mo r17 kinder-empfangen"></div>
-      <div class="cell mo r18 abendessen span-2"></div>
-      <!-- <div class="cell mo r19"></div> -->
+      <div class="cell mo r18 abendessen"></div>
+      <div class="cell mo r19 picknick"></div>
       <div class="cell mo r20 einschlafen"></div>
 
       <!-- ── Montag erwerbsarbeit (col 3) ── -->
       <div class="cell mo erwerbsarbeit"></div>
 
       <!-- ── Dienstag haushalt (col 4) ── -->
+      <div class="cell di r6 fennek"></div>
       <div class="cell di r7 fruehstueck"></div>
       <div class="cell di r8 villa-fahrt-1"></div>
-      <div class="cell di r9 na span-2"></div>
+      <div class="cell di r9 home-office span-2"></div>
       <!-- <div class="cell di r10"></div> -->
       <div class="cell di r11 villa-fahrt-2"></div>
       <div class="cell di r12 mittagessen"></div>
-      <div class="cell di r13 home-office span-4"></div>
+      <div class="cell di r13 home-office-fennek span-4"></div>
       <!-- <div class="cell di r14"></div> -->
       <!-- <div class="cell di r15"></div> -->
       <!-- <div class="cell di r16"></div> -->
@@ -73,6 +76,7 @@
       <div class="cell di erwerbsarbeit"></div>
 
       <!-- ── Mittwoch haushalt (col 6) ── -->
+      <div class="cell mi r6 fennek"></div>
       <div class="cell mi r7 fruehstueck"></div>
       <div class="cell mi r8 bela span-4"></div>
       <!-- <div class="cell mi r9"></div> -->
@@ -92,13 +96,14 @@
       <div class="cell mi erwerbsarbeit"></div>
 
       <!-- ── Donnerstag haushalt (col 8) ── -->
+      <div class="cell do r6 fennek"></div>
       <div class="cell do r7 fruehstueck"></div>
       <div class="cell do r8 villa-fahrt-1"></div>
-      <div class="cell do r9 na span-2"></div>
+      <div class="cell do r9 home-office span-2"></div>
       <!-- <div class="cell do r10"></div> -->
       <div class="cell do r11 villa-fahrt-2"></div>
       <div class="cell do r12 mittagessen"></div>
-      <div class="cell do r13 home-office span-4"></div>
+      <div class="cell do r13 home-office-fennek span-4"></div>
       <!-- <div class="cell do r14"></div> -->
       <!-- <div class="cell do r15"></div> -->
       <!-- <div class="cell do r16"></div> -->
@@ -111,6 +116,7 @@
       <div class="cell do erwerbsarbeit"></div>
 
       <!-- ── Freitag haushalt (col 10) ── -->
+      <div class="cell fr r6 fennek"></div>
       <div class="cell fr r7 fruehstueck"></div>
       <div class="cell fr r8 bela span-4"></div>
       <!-- <div class="cell fr r9"></div> -->
@@ -131,5 +137,28 @@
 
     </div>
   </div>
+  <script>
+    const p = new URLSearchParams(window.location.search);
+    let monday;
+    if (p.has('date')) {
+      monday = new Date(p.get('date'));
+    } else if (p.has('week')) {
+      const week = parseInt(p.get('week'));
+      const year = p.has('year') ? parseInt(p.get('year')) : new Date().getFullYear();
+      // ISO week 1 contains Jan 4
+      const jan4 = new Date(year, 0, 4);
+      const startOfW1 = new Date(jan4);
+      startOfW1.setDate(jan4.getDate() - (jan4.getDay() || 7) + 1);
+      monday = new Date(startOfW1);
+      monday.setDate(startOfW1.getDate() + (week - 1) * 7);
+    }
+    if (monday) {
+      document.querySelectorAll('.day-date').forEach((el, i) => {
+        const d = new Date(monday);
+        d.setDate(monday.getDate() + i);
+        el.textContent = `${String(d.getDate()).padStart(2,'0')}.${String(d.getMonth()+1).padStart(2,'0')}`;
+      });
+    }
+  </script>
 </body>
 </html>
